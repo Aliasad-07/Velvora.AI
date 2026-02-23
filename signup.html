@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velvora-Signup</title>
+<link rel="shortcut icon"
+    href="./icons/logo.png "
+    type="image/x-icon">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000000, #1c1c1c);
+}
+
+.signup-glass {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  padding: 50px 40px;
+  max-width: 400px;
+  width: 100%;
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-glass h2 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  font-size: 30px;
+}
+
+.signup-input {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f1f1;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.signup-input::placeholder {
+  color: #aaa;
+}
+
+.signup-input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00ffc3;
+  box-shadow: 0 0 10px #00ffc3;
+}
+
+.btn-neon {
+  width: 100%;
+  background: #00ffc3;
+  color: #000;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 12px 0;
+  border: none;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px #00ffc3;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.btn-neon:hover {
+  background: #00e6b8;
+  box-shadow: 0 0 30px #00ffc3;
+ 
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  align-self: flex-start;
+  margin: 0 0 10px 0;
+}
+
+/* ✅ Validation Guide Box */
+.validation-box {
+  display: none;
+  background: #0f5132;
+  color: #fff;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,255,195,0.6);
+}
+.validation-box p {
+  margin: 5px 0;
+}
+</style>
+</head>
+<body>
+
+<form id="signupForm" class="signup-glass">
+    <h2>Velvora SignUp</h2>
+    
+    <div class="validation-box" id="nameRules">
+      <b>Valid Name:</b>
+      <p>✔ Only alphabets allowed (A-Z, a-z)</p>
+      <p>✔ At least 2 characters</p>
+      <p>✔ Must contain at least 1 uppercase letter</p>
+    </div>
+    <input type="text" id="name" placeholder="Full Name" class="signup-input">
+    <div id="nameError" class="error"></div>
+
+    <div class="validation-box" id="emailRules">
+      <b>Valid Email:</b>
+      <p>✔ Must be in format: example@mail.com</p>
+    </div>
+    <input type="email" id="email" placeholder="Email" class="signup-input">
+    <div id="emailError" class="error"></div>
+
+    <div class="validation-box" id="passwordRules">
+      <b>Valid Password:</b>
+      <p>✔ Minimum 6 characters</p>
+      <p>✔ At least 1 lowercase letter</p>
+      <p>✔ At least 1 uppercase letter</p>
+      <p>✔ At least 1 number</p>
+      <p>✔ At least 1 special character (!@#$%^&*)</p>
+    </div>
+    <input type="password" id="password" placeholder="Password" class="signup-input">
+    <div id="passError" class="error"></div>
+
+    <button type="submit" class="btn-neon">SignUp</button>
+</form>
+
+<script>
+const form = document.getElementById('signupForm');
+
+// === Validation Box Show/Hide ===
+const inputs = document.querySelectorAll('.signup-input');
+inputs.forEach(input => {
+  input.addEventListener('focus', () => {
+    document.querySelectorAll('.validation-box').forEach(box => box.style.display = 'none');
+    if(input.id === 'name') document.getElementById('nameRules').style.display = 'block';
+    if(input.id === 'email') document.getElementById('emailRules').style.display = 'block';
+    if(input.id === 'password') document.getElementById('passwordRules').style.display = 'block';
+  });
+  input.addEventListener('blur', () => {
+    document.querySelectorAll('.validation-box').forEach(box => box.style.display = 'none');
+  });
+});
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Clear previous errors
+    document.getElementById('nameError').innerText = '';
+    document.getElementById('emailError').innerText = '';
+    document.getElementById('passError').innerText = '';
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    let isValid = true;
+
+    // Name: only alphabets, at least 2 chars, at least 1 uppercase
+    const namePattern = /^(?=.*[A-Z])[A-Za-z\s]{2,}$/;
+    if(!namePattern.test(name)) {
+        document.getElementById('nameError').innerText = 'Name must be alphabets only, at least 2 chars, with 1 uppercase';
+        isValid = false;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailPattern.test(email)) {
+        document.getElementById('emailError').innerText = 'Invalid email format';
+        isValid = false;
+    }
+
+    // Password: min 6, 1 uppercase, 1 lowercase, 1 number, 1 special char
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/;
+    if(!passwordPattern.test(password)) {
+        document.getElementById('passError').innerText = 'Password must have 6+ chars, 1 uppercase, 1 lowercase, 1 number, 1 special char';
+        isValid = false;
+    }
+
+    if(!isValid) return;
+
+    // ✅ LocalStorage Signup
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    if(users.some(u => u.email === email)) {
+        document.getElementById('emailError').innerText = 'Email already registered. Please login.';
+        return;
+    }
+
+    users.push({name, email, password});
+    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem('currentUser', JSON.stringify({name, email}));
+
+    window.location.href = 'index.html';
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velvora - Our Cars</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./icons/logo.png " type="image/x-icon">
+  <!-- Font Awesome (optional for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/our_cars.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</head>
+
+<body>
+
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <a href="./index.html">
+      <div class="logo">
+        <img src="./icons/logo.png" alt="Logo">
+
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./our-cars.html" class="active">Our Cars</a>
+      <a href="./variant.html">Variants</a>
+      <a href="./price.html">Prices</a>
+      <a href="./parts.html">Parts</a>
+      <a href="./comapre.html">Compare</a>
+      <a href="./ai.html">AI-Matchmaker</a>
+      <a href="./speed.html">Test Drive</a>
+      <a href="./about.html">About Us</a>
+    </div>
+    
+    
+    <!-- Right: Contact button + Account avatar -->
+    <div style="display:flex; align-items:center; gap:15px;">
+      <a href="./contact.html">
+        <button class="contact-btn">Contact</button>
+      </a>
+      <div id="account-display"></div>
+    </div>
+
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./index.html">Home</a>
+    <a href="./our-cars.html">Our Cars</a>
+    <a href="./variant.html">Variants</a>
+    <a href="./price.html">Prices</a>
+    <a href="./parts.html">Parts</a>
+    <a href="./comapre.html">Compare</a>
+    <a href="./ai.html">AI-Matchmaker</a>
+    <a href="./speed.html">Test Drive</a>
+    <a href="./about.html">About Us</a>
+    <a href="./contact.html">Contact</a>
+  </div>
+
+
+  <br> <br> <br>
+
+
+
+
+  <!-- Our Cars Section -->
+  <section id="our-cars" class="py-5">
+    <div class="container">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 fancy-title tracking-tight">Our Cars</h1>
+      <!-- <p class="text-center mb-5 text-white"> -->
+      <p class="text-center mb-5 text-white fs-5" style="text-align: center;color: black; font-size: 18px">
+        Explore our wide range of high-quality vehicles. Whether you're looking for fuel efficiency, luxury, or rugged
+        performance, Velvora has the perfect car for you.
+      </p>
+      <div class="row g-4">
+        <!-- Car 1 -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+
+              <div class="custom-card d-flex" data-aos="fade-left" data-aos-duration="1200">
+
+                <!-- Left: Car Image (no gap) -->
+                <div style="flex: 1;">
+                  <img src="./images/corolla_night.jpg" alt="Toyota Corolla" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota Corolla</h2>
+                  <p class="text-white">
+                    A reliable sedan known for durability and fuel efficiency.
+                  </p> <br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#corollaModal">View
+                      Detail</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Toyota Corolla Modal -->
+        <div class="modal fade" id="corollaModal" tabindex="-1" aria-labelledby="corollaModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="corollaModalLabel">Toyota Corolla Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="corolla-image-view">
+                  <img id="carImage_corolla" src="./images/corolla_day.jpg" alt="Toyota Corolla"
+                    class="modal-img mb-4 img-fluid" />
+
+                </div>
+
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <!-- Night Mode Button -->
+                  <button id="toggleBtn_corolla" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('corolla')">
+                    🌙
+                  </button>
+
+                  <!-- 360 View Button -->
+                  <button id="toggle360Btn_corolla" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('corolla')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 🔄 360° Model View (Initially hidden) -->
+                <div id="corolla-360-view" style="display: none;">
+                  <model-viewer src="./360/2014_toyota_corolla_e180_eu_with_interior.glb" alt="Toyota Corolla 3D Model"
+                    camera-controls auto-rotate background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota Corolla is known for its reliability and fuel efficiency, making it ideal for city commutes
+                  and long drives alike.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 1.8L 4-Cylinder</li>
+                  <li style="text-align: start;">Transmission: Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 30 MPG City / 38 MPG Highway</li>
+                  <li style="text-align: start;">Seating Capacity: 5</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Toyota Fortuner Card -->
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="custom-card d-flex flex-row-reverse" data-aos="fade-left" data-aos-duration="1200">
+
+        <!-- Right: Car Image -->
+        <div style="flex: 1;">
+          <img src="./images/fortuner_night.jpg" alt="Toyota Fortuner" class="car-img">
+        </div>
+
+        <!-- Left: Text Content -->
+        <div style="flex: 1; padding: 30px;">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+            alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+          <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota Fortuner</h2>
+          <p class="text-white">
+            Rugged SUV with power and versatility for any road.
+          </p> <br>
+          <p class="mb-3 text-white">
+            For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+              here</a>.
+          </p>
+          <div class="d-flex justify-content-center mt-4">
+            <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#fortunerModal">View
+              Detail</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Toyota Fortuner Modal -->
+        <div class="modal fade" id="fortunerModal" tabindex="-1" aria-labelledby="fortunerModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="fortunerModalLabel">Toyota Fortuner Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="fortuner-image-view">
+                  <img id="carImage_fortuner" src="./images/fortuner_day.jpg" alt="Toyota Fortuner"
+                    class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <!-- 🔘 Buttons (Left side) -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <button id="toggleBtn_fortuner" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('fortuner')">
+                    🌙
+                  </button>
+
+                  <button id="toggle360Btn_fortuner" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('fortuner')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 🔄 360° Model View (Initially hidden) -->
+                <div id="fortuner-360-view" style="display: none;">
+                  <model-viewer src="./360/toyota_fortuner_2021.glb" alt="Toyota Fortuner 3D Model" camera-controls
+                    auto-rotate background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota Fortuner is a rugged SUV known for its powerful performance, spacious interior, and
+                  off-road
+                  capabilities.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 2.7L Petrol or 2.8L Diesel</li>
+                  <li style="text-align: start;">Transmission: Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 12 KM/L (average)</li>
+                  <li style="text-align: start;">Seating Capacity: 7</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <!-- Car 2 -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="custom-card d-flex" data-aos="fade-left" data-aos-duration="1200">
+
+                <!-- Left: Car Image -->
+                <div style="flex: 1;">
+                  <img src="./images/camry_night.jpg" alt="Toyota Camry" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota Camry</h2>
+                  <p style="color: #ffffff;">
+                    A stylish sedan offering a smooth ride with top-notch comfort and efficiency.
+                  </p> <br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#camryModal">View
+                      Detail</button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Toyota Camry Modal -->
+        <div class="modal fade" id="camryModal" tabindex="-1" aria-labelledby="camryModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="camryModalLabel">Toyota Camry Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+                <!-- 🔁 Toggle Sections -->
+                <div id="camry-image-view">
+                  <img id="carImage_camry" src="./images/camry_day.jpg" alt="Toyota Camry"
+                    class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <!-- 🌙 Night Mode -->
+                  <button id="toggleBtn_camry" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('camry')">
+                    🌙
+                  </button>
+
+                  <!-- 🔄 360 View -->
+                  <button id="toggle360Btn_camry" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('camry')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 🔄 360° Model View -->
+                <div id="camry-360-view" style="display: none;">
+                  <model-viewer src="./360/toyota_camry_2020.glb" alt="Toyota Camry 3D Model" camera-controls
+                    auto-rotate background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota Camry is a mid-size sedan that offers a comfortable ride and advanced safety features for a
+                  premium experience.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 2.5L 4-Cylinder</li>
+                  <li style="text-align: start;">Transmission: Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 28 MPG City / 39 MPG Highway</li>
+                  <li style="text-align: start;">Seating Capacity: 5</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Toyota Yaris Card -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="custom-card d-flex flex-row-reverse" data-aos="slide-up" data-aos-duration="1500">
+
+                <!-- Left: Car Image -->
+                <div style="flex: 1;">
+                  <img src="./images/yaris_night.jpg" alt="Toyota Yaris" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota Yaris</h2>
+                  <p class="text-white">
+                    Compact, efficient, and packed with smart features for urban driving.
+                  </p> <br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#yarisModal">View
+                      Detail</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Toyota Yaris Modal (Upgraded) -->
+        <div class="modal fade" id="yarisModal" tabindex="-1" aria-labelledby="yarisModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="yarisModalLabel">Toyota Yaris Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="yaris-image-view">
+                  <img id="carImage_yaris" src="./images/yaris_day.jpg" alt="Toyota Yaris"
+                    class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <!-- 🔘 Buttons (Left side) -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <button id="toggleBtn_yaris" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('yaris')">
+                    🌙
+                  </button>
+
+                  <button id="toggle360Btn_yaris" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('yaris')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 360° Model View (Initially hidden) -->
+                <div id="yaris-360-view" style="display: none;">
+                  <model-viewer src="./360/2020_toyota_gr_yaris.glb" alt="Toyota Yaris 3D Model" camera-controls
+                    auto-rotate background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota Yaris is a stylish and fuel-efficient sedan designed for city life. It offers advanced
+                  safety features, smooth handling, and a comfortable interior.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 1.3L or 1.5L Petrol</li>
+                  <li style="text-align: start;">Transmission: Manual / CVT Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 14–17 KM/L</li>
+                  <li style="text-align: start;">Seating Capacity: 5</li>
+                  <li style="text-align: start;">Airbags: Dual Front SRS</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Toyota Hilux Card -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="custom-card d-flex" data-aos="slide-up" data-aos-duration="1500">
+
+                <!-- Left: Car Image -->
+                <div style="flex: 1;">
+                  <img src="./images/hilux_night.jpg" alt="Toyota Hilux" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota Hilux</h2>
+                  <p class="text-white">
+                    Durable and powerful pickup built to conquer every terrain.
+                  </p> <br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#hiluxModal">View
+                      Detail</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toyota Hilux Modal (Upgraded) -->
+        <div class="modal fade" id="hiluxModal" tabindex="-1" aria-labelledby="hiluxModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="hiluxModalLabel">Toyota Hilux Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="hilux-image-view">
+                  <img id="carImage_hilux" src="./images/hilux_day.jpg" alt="Toyota Hilux"
+                    class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <!-- 🔘 Buttons (Left side) -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <button id="toggleBtn_hilux" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('hilux')">
+                    🌙
+                  </button>
+
+                  <button id="toggle360Btn_hilux" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('hilux')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 360° Model View (Initially hidden) -->
+                <div id="hilux-360-view" style="display: none;">
+                  <model-viewer src="./360/2022_toyota_hilux.glb" alt="Toyota Hilux 3D Model" camera-controls
+                    auto-rotate background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota Hilux is a robust pickup truck known for its off-road dominance, reliability, and
+                  heavy-duty performance. Ideal for both work and adventure.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 2.8L Diesel</li>
+                  <li style="text-align: start;">Transmission: Manual / Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 10–12 KM/L</li>
+                  <li style="text-align: start;">Seating Capacity: 5</li>
+                  <li style="text-align: start;">Drive: 4x4</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Toyota Prius Card -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="custom-card d-flex flex-row-reverse" data-aos="slide-up" data-aos-duration="1500">
+
+                <!-- Left: Car Image -->
+                <div style="flex: 1;">
+                  <img src="./images/prius_night.jpg" alt="Toyota Prius" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota Prius</h2>
+                  <p class="text-white">
+                    Hybrid innovation meets futuristic design and top fuel efficiency.
+                  </p> <br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#priusModal">View
+                      Detail</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toyota Prius Modal (Upgraded) -->
+        <div class="modal fade" id="priusModal" tabindex="-1" aria-labelledby="priusModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="priusModalLabel">Toyota Prius Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="prius-image-view">
+                  <img id="carImage_prius" src="./images/prius_day.jpg" alt="Toyota Prius"
+                    class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <!-- 🔘 Buttons (Left side) -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <button id="toggleBtn_prius" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('prius')">
+                    🌙
+                  </button>
+
+                  <button id="toggle360Btn_prius" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('prius')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 360° Model View (Initially hidden) -->
+                <div id="prius-360-view" style="display: none;">
+                  <model-viewer src="./360/toyota_prius_2020.glb" alt="Toyota Prius 3D Model" camera-controls
+                    auto-rotate background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota Prius is a pioneering hybrid car that combines exceptional fuel economy with eco-conscious
+                  technology, making it a top choice for urban and highway drivers alike.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 1.8L Hybrid (Petrol + Electric)</li>
+                  <li style="text-align: start;">Transmission: e-CVT Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 20–25 KM/L</li>
+                  <li style="text-align: start;">Seating Capacity: 5</li>
+                  <li style="text-align: start;">Emissions: Ultra Low Emission Vehicle (ULEV)</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        
+
+
+
+        <!-- Toyota Supra Card -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="custom-card d-flex" data-aos="fade-left" data-aos-duration="1200">
+
+                <!-- Left: Car Image -->
+                <div style="flex: 1;">
+                  <img src="./images/supra_night.jpg" alt="Toyota Supra" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota Supra</h2>
+                  <p class="text-white">
+                    Iconic sports car with power, agility, and striking design.
+                  </p><br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#supraModal">View
+                      Detail</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Toyota Supra Modal (Upgraded) -->
+        <div class="modal fade" id="supraModal" tabindex="-1" aria-labelledby="supraModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="supraModalLabel">Toyota Supra Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="supra-image-view">
+                  <img id="carImage_supra" src="./images/supra_day.jpg" alt="Toyota Supra"
+                    class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <!-- 🔘 Buttons (Left side) -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <button id="toggleBtn_supra" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('supra')">
+                    🌙
+                  </button>
+
+                  <button id="toggle360Btn_supra" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('supra')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 360° Model View (Initially hidden) -->
+                <div id="supra-360-view" style="display: none;">
+                  <model-viewer src="./360/toyota_gr_supra.glb" alt="Toyota Supra 3D Model" camera-controls auto-rotate
+                    background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota Supra is a legendary sports coupe engineered for thrill-seekers. With turbocharged
+                  performance,
+                  sleek design, and precision handling, it’s a modern icon born from racing DNA.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 3.0L Twin-Scroll Turbo Inline-6</li>
+                  <li style="text-align: start;">Transmission: 8-Speed Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 10–12 KM/L</li>
+                  <li style="text-align: start;">Seating Capacity: 2</li>
+                  <li style="text-align: start;">0–100 km/h: ~4.1 seconds</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Toyota GR86 Card -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="custom-card d-flex flex-row-reverse" data-aos="fade-right" data-aos-duration="1200">
+
+                <!-- Left: Car Image -->
+                <div style="flex: 1;">
+                  <img style="object-fit: fill;" src="./images/gr86_night.jpg" alt="Toyota GR86" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px; ">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota GR86</h2>
+                  <p class="text-white">
+                    Compact sports car delivering pure driving excitement.
+                  </p><br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#gr86Modal">View Detail</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toyota GR86 Modal (Upgraded) -->
+        <div class="modal fade" id="gr86Modal" tabindex="-1" aria-labelledby="gr86ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="gr86ModalLabel">Toyota GR86 Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="gr86-image-view">
+                  <img id="carImage_gr86" src="./images/gr86_day.jpg" alt="Toyota GR86"
+                    class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <!-- 🔘 Buttons (Left side) -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <button id="toggleBtn_gr86" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('gr86')">
+                    🌙
+                  </button>
+
+                  <button id="toggle360Btn_gr86" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('gr86')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 360° Model View (Initially hidden) -->
+                <div id="gr86-360-view" style="display: none;">
+                  <model-viewer src="./360/toyota_gr86_zn8.glb" alt="Toyota GR86 3D Model" camera-controls auto-rotate
+                    background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota GR86 is a pure, driver-focused sports coupe developed by Gazoo Racing. It delivers
+                  exceptional
+                  handling, balance, and performance — perfect for enthusiasts who crave the thrill of RWD dynamics.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 2.4L Flat-4 (Boxer)</li>
+                  <li style="text-align: start;">Transmission: 6-Speed Manual / Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 9–12 KM/L</li>
+                  <li style="text-align: start;">Seating Capacity: 4</li>
+                  <li style="text-align: start;">Drivetrain: Rear-Wheel Drive (RWD)</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Toyota MR2 Card -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="custom-card d-flex" data-aos="fade-up" data-aos-duration="1200">
+
+                <!-- Left: Car Image -->
+                <div style="flex: 1;">
+                  <img src="./images/mr2_night.jpg" alt="Toyota MR2" class="car-img">
+                </div>
+
+                <!-- Right: Text Content -->
+                <div style="flex: 1; padding: 30px;">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.wHoIWn6V7GV-DyhdxJqh9gHaIO?pid=Api&P=0&h=220"
+                    alt="Toyota Logo" style="width: 50px; margin-bottom: 15px;">
+                  <h2 style="font-size: 40px; font-weight: bold;" class="mb-2 text-white">Toyota MR2</h2>
+                  <p class="text-white">
+                    Classic mid-engine roadster with sporty handling and fun driving.
+                  </p><br>
+                  <p class="mb-3 text-white">
+                    For pricing info, <a href="price.html" class="text-primary" style="font-weight: 600;">click
+                      here</a>.
+                  </p>
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="magnetic-btn" data-bs-toggle="modal" data-bs-target="#mr2Modal">View Detail</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Toyota MR2 Modal (Upgraded) -->
+        <div class="modal fade" id="mr2Modal" tabindex="-1" aria-labelledby="mr2ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title" id="mr2ModalLabel">Toyota MR2 Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body text-center">
+
+                <!-- 🔁 Toggle Sections -->
+                <div id="mr2-image-view">
+                  <img id="carImage_mr2" src="./images/mr2_day.jpg" alt="Toyota MR2" class="modal-img mb-4 img-fluid" />
+                </div>
+
+                <!-- 🔘 Buttons (Left side) -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                  <button id="toggleBtn_mr2" class="btn btn-dark icon-btn" title="Switch to Night View"
+                    onclick="toggleDayNight('mr2')">
+                    🌙
+                  </button>
+
+                  <button id="toggle360Btn_mr2" class="btn btn-warning icon-btn" title="360° View"
+                    onclick="toggle360View('mr2')">
+                    🔄
+                  </button>
+                </div>
+
+                <br>
+
+                <!-- 360° Model View (Initially hidden) -->
+                <div id="mr2-360-view" style="display: none;">
+                  <model-viewer src="./360/toyota_mr2_sw20.glb" alt="Toyota MR2 3D Model" camera-controls auto-rotate
+                    background-color="#000000" style="width: 100%; height: 400px;">
+                  </model-viewer>
+                </div>
+
+                <!-- Overview -->
+                <h6 style="text-align: start;" class="text-white">Overview</h6>
+                <hr>
+                <p style="text-align: start;" class="text-white">
+                  The Toyota MR2 is a legendary two-seater sports car known for its mid-engine layout, razor-sharp
+                  handling, and lightweight build — a true driver’s car that remains a cult favorite.
+                </p>
+                <br>
+
+                <!-- Specifications -->
+                <h6 style="text-align: start;" class="text-white">Specifications:</h6>
+                <hr>
+                <ul class="text-white">
+                  <li style="text-align: start;">Engine: 1.8L DOHC Inline-4 (Turbo Optional)</li>
+                  <li style="text-align: start;">Transmission: 5-Speed Manual / 4-Speed Automatic</li>
+                  <li style="text-align: start;">Fuel Economy: 10–13 KM/L</li>
+                  <li style="text-align: start;">Seating Capacity: 2</li>
+                  <li style="text-align: start;">Drivetrain: Rear Mid-Engine, Rear-Wheel Drive</li>
+                </ul>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+  </section>
+
+
+<!-- Footer Section -->
+<footer id="footer" style="background-color: #181818;" class="text-light py-5">
+  <div class="container">
+    <div class="row align-items-start">
+      <!-- Logo and Brief Description -->
+      <div class="col-lg-3 col-md-4 col-sm-12 mb-4 d-flex flex-column justify-content-start">
+        <h3 style="font-size: 27px; color: #0ff;" class="fw-bold">Velvora</h3>
+        <p class="text-white mt-2">
+          Driving excellence with every mile. Explore our premium vehicle collection and services.
+          Discover your dream drive. Stylish, reliable, and powerful cars for every journey.
+        </p>
+      </div>
+
+       <!-- Quick Links -->
+       <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+        <div style="height: 5px;"></div>
+        <h5 style="font-size: 18px;" class="fw-bold">Quick Links</h5>
+        <div style="height: 7px;"></div>
+        <ul class="list-unstyled">
+          <li><a href="./index.html" class="text-light" style="text-decoration: none;">Home</a></li>
+          <li><a href="./our-cars.html" class="text-light" style="text-decoration: none;">Our Cars</a></li>
+          <li><a href="./variant.html" class="text-light" style="text-decoration: none;">Varient</a></li>
+          <li><a href="./price.html" class="text-light" style="text-decoration: none;">Price</a></li>
+          <li><a href="./parts.html" class="text-light" style="text-decoration: none;">Parts</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- Quick Links 2 -->
+      <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+        <div style="height: 5px;"></div>
+        <h5 style="font-size: 18px;" class="fw-bold">Quick Links</h5>
+        <div style="height: 7px;"></div>
+        <ul class="list-unstyled">
+          <li><a href="./ai.html" class="text-light" style="text-decoration: none;">AI-Matchmaker</a></li>
+          <li><a href="./speed.html" class="text-light" style="text-decoration: none;">Test Drive</a></li>
+          <li><a href="./about.html" class="text-light" style="text-decoration: none;">About Us</a></li>
+          <li><a href="./compare.html" class="text-light" style="text-decoration: none;">Compare</a></li>
+          <li><a href="./contact.html" class="text-light" style="text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+        <div style="height: 5px;"></div>
+        <h5 style="font-size: 18px;" class="fw-bold">Services</h5>
+        <div style="height: 7px;"></div>
+        <ul class="list-unstyled">
+          <li><a href="./about.html#services" class="text-light" style="text-decoration: none;">Maintenance</a></li>
+          <li><a href="./about.html#services" class="text-light" style="text-decoration: none;">Customization</a></li>
+          <li><a href="./about.html#services" class="text-light" style="text-decoration: none;">Delivery</a></li>
+          <li><a href="./about.html#services" class="text-light" style="text-decoration: none;">Oil Change</a></li>
+          <li><a href="./about.html#services" class="text-light" style="text-decoration: none;">Diagnostics</a></li>
+          <li><a href="./about.html#services" class="text-light" style="text-decoration: none;">Battery Replacement</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <h5 style="font-size: 18px;" class="fw-bold">Follow Us</h5>
+        <div class="d-flex">
+          <a href="https://www.facebook.com" target="_blank" class="text-light fs-3 me-3"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com" target="_blank" class="text-light fs-3 me-3"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="text-light fs-3 me-3"><i class="fab fa-instagram"></i></a>
+          <a href="https://pk.linkedin.com" target="_blank" class="text-light fs-3"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4" style="border-color: #333;">
+
+    <!-- Bottom Bar -->
+    <div class="py-3">
+      <p style="text-align: center;" class="mb-0">&copy; 2025 Velvora. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="./js/our cars.js"></script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Model Viewer Script -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Chat Bot HTML -->
+  <div id="chatbot">
+    <div id="chatbot-header">Velvora ChatBot
+      <span id="chatbot-close" style="float:right; cursor:pointer; font-size:18px;"></span>
+    </div>
+
+    <div id="chatbot-messages">
+      <div id="typing-indicator" style="display: none; color: #666; margin: 8px 0;">
+        <b>Bot:</b> <span id="dots">...</span>
+      </div>
+    </div>
+    <div id="chatbot-input">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <button id="chatbot-toggle" onclick="toggleChatbot()">
+    <i class="fas fa-robot"></i>
+  </button>
+
+
+
+
+</body>
+
+</html>
